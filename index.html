@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <title>Gemoji</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale =0, user-scalable=no">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    
+    <body oncontextmenu="//return false">
+        <div id="overlay"></div>
+        <textarea id="share-text" style="display: none;"></textarea>
+
+        <header>
+            <h1 id="title">GEMOJI</h1>
+            <div id="icon-left">
+                <button type="button" class="button" onclick="showStats()">
+                    <span class="button__icon">
+                        <img src="stats1.png"/>
+                    </span>
+                </button>
+            </div>
+            <div id="icon-right">
+                <button type="button" class="button" onclick="showInfo()">
+                    <span class="button__icon">
+                        <img src="info1.png"/>
+                    </span>
+                </button>
+            </div>
+        </header>
+        
+        <br>
+        <hr>
+        <br class="bigger">
+        <h1 id="emoji"></h1>
+        <br>
+
+        <div id="stats-container">
+            <header class="div-head">STATISTICS</header>
+            <div id="icon-x">
+                <button type="button" class="button" onclick="hideStats()">
+                    <span class="button__icon">
+                        <img src="x1.png"/>
+                    </span>
+                </button>
+            </div>
+            <br>
+            <div class="container">
+                <div class="box"> 
+                    <div class="box-row"> 
+                        <div class="box-cell" id="games-played"> 
+                            0
+                        </div> 
+                            
+                        <div class="box-cell" id="win-percentage"> 
+                            0
+                        </div> 
+
+                        <div class="box-cell" id="current-streak"> 
+                            0
+                        </div> 
+
+                        <div class="box-cell" id="highest-streak"> 
+                            0
+                        </div>
+                        <div class="box-cell" id="gemoji-score"> 
+                            0
+                        </div> 
+                    </div>
+                    <div class="box-row"> 
+                        <div class="box-cell" style="font-size: 15px; font-weight: bold;"> 
+                            Played
+                        </div> 
+                            
+                        <div class="box-cell" style="font-size: 15px; font-weight: bold;"> 
+                            Win%
+                        </div> 
+
+                        <div class="box-cell" style="font-size: 15px; font-weight: bold;"> 
+                            Current Streak
+                        </div> 
+
+                        <div class="box-cell" style="font-size: 15px; font-weight: bold;"> 
+                            Highest Streak
+                        </div>
+                        <div class="box-cell" style="font-size: 15px; font-weight: bold;"> 
+                            Gemoji Score
+                        </div> 
+                    </div> 
+                </div>
+                <br>
+                <hr>
+                <br>
+            </div>
+            <header class="div-head" style="font-size: 20px">GUESS DISTRIBUTION</header>
+            <br>
+            <br>
+            <div class="guess-bar-container">
+                <div class="num-guess">1</div>
+                <div class="guess-bar" id="guessOne"></div>
+            </div>
+            <br>
+            <div class="guess-bar-container">
+                <div class="num-guess">2</div>
+                <div class="guess-bar" id="guessTwo"></div>
+            </div>
+            <br>
+            <div class="guess-bar-container">
+                <div class="num-guess">3</div>
+                <div class="guess-bar" id="guessThree"></div>
+            </div>
+            <br>
+            <div class="guess-bar-container">
+                <div class="num-guess">4</div>
+                <div class="guess-bar" id="guessFour"></div>
+            </div>
+            <br>
+            <button id="share-button" onclick="copyText()">Share Score</button>
+        </div>
+
+        <div id="info-container">
+            <header class="div-head">HOW TO PLAY</header>
+            <div id="icon-x">
+                <button type="button" class="button" onclick="hideInfo()">
+                    <span class="button__icon">
+                        <img src="x1.png"/>
+                    </span>
+                </button>
+            </div>
+            <br>
+            <p class="div-body">
+                Guess the GEMOJI in four tries.
+                <br>
+                <br>
+                Each guess must contain two words...
+                <br>
+                no more, no less
+                <br>
+                <br>
+                Try to think of a word that coorelates
+                <br>
+                with the two emojis given
+                <hr>
+            </p>
+            <h1 class="div-head">EXAMPLE</h1>
+            <h1 style="font-size: 60px; margin:0 auto;">🧺🔮</h1>
+            <br>
+            <h1 class="div-body">The emojis given are of a bin and a crystal ball</h1>
+            <br>
+            <h1 class="guess" style="margin:0 auto;">french fries</h1>
+            <br>
+            <h1 class="div-body">Black words mean that there is no coorelation to the target word</h1>
+            <br>
+            <div class="guess" style="margin:0 auto;">
+                <div class="guess-item-div-left" style="color: yellow;">bin</div>
+                <div class="guess-item-div-right">star</div>
+            </div>
+            <br>
+            <h1 class="div-body">Yellow words mean that the word guessed is a synonym of the target word</h1>
+            <br>
+            <div class="guess" style="margin:0 auto;">
+                <div class="guess-item-div-left" style="color: yellow;">bin</div>
+                <div class="guess-item-div-right" style="color: green;">ball</div>
+            </div>
+            <br>
+            <h1 class="div-body">Green words mean that the word guessed is the target word</h1>
+            <br>
+            <h1 class="guess" style="margin:0 auto; color: green;">basket ball</h1>
+            <br>
+            <h1 class="div-body">You win by guessing both target words in 4 guesses or less</h1>
+        </div>
+
+        <div class="guess-container">
+            <ul class="guesses"></ul>
+        </div>
+        <input type="text" class="guess-input" id="test">
+
+
+        <br>
+        <h1 id="answer"></h1>
+    </body>
+</html>
