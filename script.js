@@ -472,8 +472,7 @@ function showStats(){
         }
     }
 
-    document.getElementById("share-text").value = shareMessage
-    console.log(shareMessage);
+    document.getElementById("share-text").value = shareMessage;
 }
 
 function showInfo(){
