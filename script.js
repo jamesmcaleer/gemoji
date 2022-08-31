@@ -1,5 +1,3 @@
-
-// selectors
 const guessInput = document.querySelector(".guess-input");
 const guessList = document.querySelector(".guesses");
 
