@@ -35,7 +35,7 @@ diff = diff/msInDay;
 
 var day = currDate;
 
-const wordToEmojiList = [['fire man', '🔥👨'], ['shark tank', '🦈'], ['flower pot',''],
+const wordToEmojiList = [['fire man', '🔥👨'], ['flower pot','🌼🍲'],
  ['home work',''], ['paper clip',''], ['gift card',''], ['golf club',''], ['hat trick',''],
   ['sand castle',''], ['tree house',''], ['road rage',''], ['sun glasses',''], ['bike path',''],
    ['horse fly',''], ['stop sign',''], ['team work',''], ['family tree',''], ['head phones',''],
