@@ -437,13 +437,13 @@ function showStats(){
 
     var highestWins = Math.max(gamesWonOne, gamesWonTwo, gamesWonThree, gamesWonFour);
     document.getElementById("guessOne").innerText = gamesWonOne;
-    document.getElementById("guessOne").style.width = Math.round((gamesWonOne/highestWins) * 100) || 30;
+    document.getElementById("guessOne").style.width = Math.round((gamesWonOne/highestWins) * 275) || 30;
     document.getElementById("guessTwo").innerText = gamesWonTwo;
-    document.getElementById("guessTwo").style.width = Math.round((gamesWonTwo/highestWins) * 100) || 30;
+    document.getElementById("guessTwo").style.width = Math.round((gamesWonTwo/highestWins) * 275) || 30;
     document.getElementById("guessThree").innerText = gamesWonThree;
-    document.getElementById("guessThree").style.width = Math.round((gamesWonThree/highestWins) * 100) || 30;
+    document.getElementById("guessThree").style.width = Math.round((gamesWonThree/highestWins) * 275) || 30;
     document.getElementById("guessFour").innerText = gamesWonFour;
-    document.getElementById("guessFour").style.width = Math.round((gamesWonFour/highestWins) * 100) || 30;
+    document.getElementById("guessFour").style.width = Math.round((gamesWonFour/highestWins) * 275) || 30;
     
     if (gameOver){
         document.getElementById("share-button").style.display = "block";
