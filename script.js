@@ -61,7 +61,7 @@ var wordBreak = word.split(" ");
 var wordFirst = wordBreak[0];
 var wordSecond = wordBreak[1];
 
-//resetGameState();
+resetGameState();
 
 const getData = async (callback) => {
     await fetch('https://dictionaryapi.com/api/v3/references/thesaurus/json/' + wordFirst + '?key=68e808fe-49bb-43fa-aa19-40a7da03ac6e')
@@ -281,7 +281,7 @@ function checkGuess() {
 }
 
 function submit() {
-    event.preventDefault();
+    //event.preventDefault();
     // adjust list
 
     const guessDiv = document.createElement("div");
@@ -467,12 +467,12 @@ function showStats(){
                 shareMessage+= "⬛";
             }
             if (j == 1){
-                shareMessage+= "\n"
+                shareMessage+= "\n";
             }
         }
     }
 
-    document.getElementById("share-text").value = shareMessage;
+    document.getElementById("share-text").value = shareMessage
 }
 
 function showInfo(){
