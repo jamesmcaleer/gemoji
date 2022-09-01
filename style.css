@@ -81,7 +81,7 @@ br.bigger {
 
 #stats-container {
     background: #1b1b1b;
-    width:      475px;
+    width:      400px;
     height:     600px; 
     z-index:    10;
     position:   fixed; 
@@ -89,8 +89,8 @@ br.bigger {
     padding: 10px;
     top: 50%;
     left: 50%;
-    margin-top: -200px;
-    margin-left: -238px;
+    margin-top: -250px;
+    margin-left: -200px;
     display: none;
     overflow-y: auto;
     border-radius: 5px;
@@ -152,7 +152,7 @@ br.bigger {
     padding:10px;
     color: white;
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .guess-bar {
@@ -241,5 +241,3 @@ br.bigger {
     font-weight: bold;
     text-align: left;
 }
-
-
