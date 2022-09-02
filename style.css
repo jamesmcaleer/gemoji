@@ -25,6 +25,12 @@ br.bigger {
     line-height: 300%;
 }
 
+#icon-left {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
 #icon-right {
     display: block;
     float: right;
