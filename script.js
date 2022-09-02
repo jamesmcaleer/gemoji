@@ -36,8 +36,8 @@ diff = diff/msInDay;
 var day = currDate;
 
 const wordToEmojiList = [['fire man', '🔥👨'], ['flower pot','🌼🍲'],
- ['home work',''], ['paper clip',''], ['gift card',''], ['golf club',''], ['hat trick',''],
-  ['sand castle',''], ['tree house',''], ['road rage',''], ['sun glasses',''], ['bike path',''],
+ ['home work','🏠💼'], ['gift card','🎁🃏'], ['golf club','🏌️‍♂️♣️'], ['sand castle','🏖️🏰'],
+  ['tree house',''], ['road rage',''], ['sun glasses',''], ['bike path',''],
    ['horse fly',''], ['stop sign',''], ['team work',''], ['family tree',''], ['head phones',''],
     ['sweat shirt',''], ['bottle cap',''], ['fishing pole',''], ['tug boat',''],
      ['tree bark',''], ['dinner time',''], ['mechanical pencil',''], ['tree top',''],
@@ -61,7 +61,7 @@ var wordBreak = word.split(" ");
 var wordFirst = wordBreak[0];
 var wordSecond = wordBreak[1];
 
-resetGameState();
+//resetGameState();
 
 const getData = async (callback) => {
     await fetch('https://dictionaryapi.com/api/v3/references/thesaurus/json/' + wordFirst + '?key=68e808fe-49bb-43fa-aa19-40a7da03ac6e')
