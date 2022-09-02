@@ -26,18 +26,14 @@ br.bigger {
 }
 
 #icon-left {
-    width: 33.33%;
+    display: block;
     float: left;
-    
-    margin:-50px;
-    
 }
 
 #icon-right {
-    width: 33.33%;
+    display: block;
     float: right;
-    
-    margin:-50px;
+    margin-top: -50px;
 }
 
 #icon-x {
@@ -52,7 +48,7 @@ br.bigger {
     font-weight: bold;
     letter-spacing: 2px;
     color: aliceblue;
-    width: 33.33%;
+    width: 33%;
     margin:0 auto;
 }
 
