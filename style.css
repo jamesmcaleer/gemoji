@@ -25,15 +25,11 @@ br.bigger {
     line-height: 300%;
 }
 
-#icon-left {
-    display: block;
-    float: left;
-}
-
 #icon-right {
     display: block;
     float: right;
     margin-top: -50px;
+    width: 25%;
 }
 
 #icon-x {
@@ -49,6 +45,7 @@ br.bigger {
     letter-spacing: 2px;
     color: aliceblue;
     margin:0 auto;
+    width: 50%;
 }
 
 #emoji {
