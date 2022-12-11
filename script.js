@@ -25,7 +25,7 @@ var gamesWonFour = 0;
 var currentStreak = 0;
 var highestStreak = 0;
 
-let startDate = new Date('8/31/2022');
+let startDate = new Date('12/1/2022');
 let currDate = new Date();
 currDate.setHours(0, 0, 0, 0);
 
