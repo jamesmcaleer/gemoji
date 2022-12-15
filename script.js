@@ -25,7 +25,7 @@ var gamesWonFour = 0;
 var currentStreak = 0;
 var highestStreak = 0;
 
-let startDate = new Date('12/1/2022');
+let startDate = new Date('12/14/2022');
 let currDate = new Date();
 currDate.setHours(0, 0, 0, 0);
 
@@ -38,7 +38,7 @@ var day = currDate;
 const wordToEmojiList = [['fire man', '🔥👨'], ['flower pot','🌼🍲'],
  ['home work','🏠💼'], ['gift card','🎁🃏'], ['golf club','🏌️‍♂️♣️'], ['sand castle','🏖️🏰'],
   ['tree house','🌳🏚️'], ['road rage','🛣️😡'], ['sun glasses','☀️🤓'], ['water park','🌊🎢'],
-   ['horse fly','🐴🐜'], ['stop sign','✋⚠️'], ['team work',''], ['family tree',''], ['head phones',''],
+   ['horse fly','🐴✈️'], ['stop sign','✋⚠️'], ['team work',''], ['family tree',''], ['head phones',''],
     ['sweat shirt',''], ['bottle cap',''], ['fishing pole',''], ['tug boat',''],
      ['tree bark',''], ['dinner time',''], ['mechanical pencil',''], ['tree top',''],
       ['wheel barrow',''], ['flower bed',''], ['light house',''], ['red light',''],
