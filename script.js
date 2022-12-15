@@ -61,7 +61,7 @@ var wordBreak = word.split(" ");
 var wordFirst = wordBreak[0];
 var wordSecond = wordBreak[1];
 
-resetGameState();
+//resetGameState();
 
 const getData = async (callback) => {
     await fetch('https://dictionaryapi.com/api/v3/references/thesaurus/json/' + wordFirst + '?key=68e808fe-49bb-43fa-aa19-40a7da03ac6e')
