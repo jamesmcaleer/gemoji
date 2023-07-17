@@ -105,6 +105,9 @@ getData(loadLocalStorage);
 function loadLocalStorage() {
     try {
         guessedWords = JSON.parse(window.localStorage.getItem('guessedWords'));
+        if (guessedWords === null){
+          guessedWords = []
+        }
     } catch (err) {
         console.log('no guessed words');
     }
