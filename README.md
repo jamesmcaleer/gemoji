@@ -4,6 +4,7 @@ Guess the **compound** word given two emojis
 **Gemoji** is a daily refreshing web game similar to Wordle
 
 The player is given four tries to guess the **compound** word
+
 ## Example
 The emojis given are 🏠💼
 
@@ -11,10 +12,15 @@ The answer is home work because the house emoji represents a **home** and the br
 
 If the player guesses a synonym to one of these words, it will show up yellow hinting to the player that they are on the right track.
 
+## Play Gemoji
+To play **Gemoji**, click [here](https://jamesmcaleer.github.io/gemoji/)
+
 ## How it works
 Upon starting the game, the [Dictionary API](https://dictionaryapi.com) is used to find all synonyms of both target words
 
 For example, **home** would have synonyms such as house and place.
+
+Whenever the player inputs a word, this word is checked against synList to see if it is a synonym
 
 ```javascript
 const getData = async (callback) => {
@@ -38,7 +44,38 @@ const getData = async (callback) => {
     .catch()
 ```
 
-Whenever the player inputs a word, this word is checked against synList to see if it is a synonym
+Just like in Wordle, the players data is saved
 
-## Play Gemoji
-To play Gemoji, click [here](https://jamesmcaleer.github.io/gemoji/)
+This includes the words that they had previously guessed that day, the amount of wins the player has, the amount of games the player has played, and the streak the player is on
+
+This is all saved in the local storage of the browser so retrieving this data is simple
+
+```javascript
+function loadLocalStorage() {
+    try {
+        guessedWords = JSON.parse(window.localStorage.getItem('guessedWords'));
+        if (guessedWords === null){
+          guessedWords = []
+        }
+    } catch (err) {
+        console.log('no guessed words');
+    }
+    
+    row = Number(window.localStorage.getItem('row')) || row;
+
+    day = window.localStorage.getItem('day') || currDate;
+
+    gamesPlayed = Number(window.localStorage.getItem('gamesPlayed')) || gamesPlayed;
+
+    gamesWonOne = Number(window.localStorage.getItem('gamesWonOne')) || gamesWonOne;
+    gamesWonTwo = Number(window.localStorage.getItem('gamesWonTwo')) || gamesWonTwo;
+    gamesWonThree = Number(window.localStorage.getItem('gamesWonThree')) || gamesWonThree;
+    gamesWonFour = Number(window.localStorage.getItem('gamesWonFour')) || gamesWonFour;
+
+    currentStreak = Number(window.localStorage.getItem('currentStreak')) || currentStreak;
+    highestStreak = Number(window.localStorage.getItem('highestStreak')) || highestStreak;
+```
+
+
+
+
