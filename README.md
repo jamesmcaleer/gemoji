@@ -1,4 +1,4 @@
-# Gemogi
+# Gemoji
 Guess the **compound** word given two emojis
 ## What is Gemoji?
 **Gemoji** is a daily refreshing web game similar to Wordle
@@ -37,6 +37,8 @@ const getData = async (callback) => {
     })
     .catch()
 ```
+
+Whenever the player inputs a word, this word is checked against synList to see if it is a synonym
 
 ## Play Gemoji
 To play Gemoji, click [here](https://jamesmcaleer.github.io/gemoji/)
