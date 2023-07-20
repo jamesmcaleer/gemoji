@@ -10,7 +10,7 @@ The emojis given are 🏠💼
 
 The answer is home work because the house emoji represents a **home** and the briefcase emoji in this given context represents **work**
 
-If the player guesses a synonym to one of these words, it will show up yellow hinting to the player that they are on the right track.
+If the player guesses a synonym to one of these words, it will show up yellow hinting to the player that they are on the right track
 
 ## Play Gemoji
 To play **Gemoji**, click [here](https://jamesmcaleer.github.io/gemoji/)
@@ -18,9 +18,9 @@ To play **Gemoji**, click [here](https://jamesmcaleer.github.io/gemoji/)
 ## How it works
 Upon starting the game, the [Dictionary API](https://dictionaryapi.com) is used to find all synonyms of both target words
 
-For example, **home** would have synonyms such as house and place.
+For example, **home** would have synonyms such as house and place
 
-Whenever the player inputs a word, this word is checked against synList to see if it is a synonym
+Whenever the player inputs a word, this word is checked against synList to see if it is a synonym:
 
 ```javascript
 const getData = async (callback) => {
@@ -48,7 +48,7 @@ Just like in Wordle, the players data is saved
 
 This includes the words that they had previously guessed that day, the amount of wins the player has, the amount of games the player has played, and the streak the player is on
 
-This is all saved in the local storage of the browser so retrieving this data is simple
+This is all saved in the local storage of the browser so retrieving this data is simple:
 
 ```javascript
 function loadLocalStorage() {
