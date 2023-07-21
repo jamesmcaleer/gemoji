@@ -35,22 +35,89 @@ diff = diff/msInDay;
 
 var day = currDate;
 
-const wordToEmojiList = [['fire man', '🔥👨'], ['flower pot','🌼🍲'],
- ['home work','🏠💼'], ['gift card','🎁🃏'], ['golf club','🏌️‍♂️♣️'], ['sand castle','🏖️🏰'],
-  ['tree house','🌳🏚️'], ['road rage','🛣️😡'], ['sun glasses','☀️🤓'], ['water park','🌊🎢'],
-   ['horse fly','🐴✈️'], ['stop sign','✋⚠️'], ['team work',''], ['family tree',''], ['head phones',''],
-    ['sweat shirt',''], ['bottle cap',''], ['fishing pole',''], ['tug boat',''],
-     ['tree bark',''], ['dinner time',''], ['mechanical pencil',''], ['tree top',''],
-      ['wheel barrow',''], ['flower bed',''], ['light house',''], ['red light',''],
-       ['play list',''], ['water slide',''], ['chicken coop',''],
-        ['spa day',''], ['high tide',''], ['laser tag',''], ['drive way',''], ['spider web',''],
-         ['shoe horn',''], ['smoke shop',''], ['health care',''], ['orange juice',''],
-          ['pit stop',''], ['traffic light',''], ['corner store',''], ['brick wall',''],
-           ['wind shield',''], ['farm stand',''], ['force field',''], ['side walk',''],
-            ['head light',''], ['mountain side',''], ['bell tower',''], ['brick oven',''],
-             ['cobble stone',''], ['stained glass',''], ['bucket list',''], ['movie theater',''],
-              ['double dip',''], ['cliff note',''], , ['peanut butter',''], ['dumb bell',''],
-               ['boot camp',''], ['poison ivy',''], ['key board',''], ['phone call',''], ];
+const wordToEmojiList = [
+    ["hand shake", "✋🥤"],
+    ['dragon fruit','🐲🍉'],
+    ['stone cold','🗿🥶'],
+    ['fishing pole','🐟🦯'],
+    ['high tide','👋🌊'],
+    ['ski lift','⛷️🏋️‍♂️'],
+    ['face book','😀📕'],
+    ['cow boy','🐮👦'],
+    ['moon walk','🌕🚶‍♂️'],
+    ['good point','👍❗'],
+    ['sand castle','🏖️🏰'],
+    ['bucket list',''],
+    ['gift card','🎁🃏'],
+    ['road rage','🛣️😡'],
+    ['stop sign','✋⚠️'],
+    ["tooth brush", "🦷🖌️"],
+    ["mail box", "✉️📦"],
+    ["rain coat", "💧🧥"],
+    ["cup cake", "🧁🍰"],
+    ['key board','🔑🛹'],
+    ['cart wheel','🛒🚗'],
+    ['dinner time','🍲⏰'],
+    ['head phones','💆‍♂️📞'],
+    ['traffic light','🛣️💡'],
+    ['family tree','👪🌲'],
+    ["fire fighter", "🔥🥊"],
+    ["bed room", "🛏️🏠"],
+    ["moon light", "🌕🌠"],
+    ["wheel chair", "🚗🪑"],
+    ["snow man", "🌨️👤"],
+    ["fish bowl", "🐟🥣"],
+    ["global warming", "🌍🔥"],
+    ["wind mill", "💨🏰"],
+    ["cup board", "🥤🛹"],
+    ["thunder storm", "⛈️🌩️"],
+    ["rain drop", "💧☔"],
+    ["brain storm", "🧠🌩️"],
+    ["sea shell", "🐚🌊"],
+    ["high way", "🛣️🚗"],
+    ["suit case", "👝🧳"],
+    ["back pack", "🔙🧳"],
+    ["rail road", "🚆🛣️"],
+    ["bird house", "🐦🏠"],
+    ["hot dog", "🔥🐶"],
+    ["light house", "💡🏠"],
+    ['golf club','🏌️‍♂️♣️'],
+    ["water fall", "💧🍂"],
+    ["rain bow", "💧🏹"],
+    ["moon light", "🌕🌠"],
+    ["beach ball", "🏖️🏀"],
+    ["milk shake", "🥛🥤"],
+    ["pan cake", "🍳🥞"],
+    ['fire man', '🔥👨'],
+    ['water park','🌊🎢'],
+    ['red light',''],
+    ['sweat shirt',''],
+    ['play list','']
+    ['laser tag',''],
+    ["tea pot", "🍵🍶"],
+    ['home work','🏠💼'],
+    ['wind shield',''],
+    ['corner store',''],
+    ['boot camp',''],
+    ['peanut butter',''],
+    ['pit stop',''],
+    ['photo graph',''],
+    ['new jersey',''],
+    ['jet pack',''],
+    ['web page',''],
+    ['air head',''],
+    ['boot camp',''],
+    ['toy drive',''],
+    ['drama queen',''],
+    ['time line',''],
+    ['quarter back',''],
+    ['high school',''],
+    ['food fight',''],
+    ['train wreck',''],
+    ['holly wood',''],
+    ['bikini bottom',''],
+    ['mountain side','']
+];
 
 const word = wordToEmojiList[diff][0];
 const emoji = wordToEmojiList[diff][1];
@@ -64,38 +131,39 @@ var wordSecond = wordBreak[1];
 //resetGameState();
 
 const getData = async (callback) => {
-    await fetch('https://dictionaryapi.com/api/v3/references/thesaurus/json/' + wordFirst + '?key=68e808fe-49bb-43fa-aa19-40a7da03ac6e')
+    await fetch('https://api.api-ninjas.com/v1/thesaurus?word=' + wordFirst, 
+    {headers: { 'X-Api-Key': 'qES39P3zb/DiJ6lltMJhfw==lkt9C2EiF2GPS7W6'}})
     .then((response) => {
+        console.log(response)
         return response.json();
     })
     .then((data) => {
         synListFirst = [];
+        console.log(data);
         //console.log(data[0]["meta"]["syns"][0]);
-        for (let i = 0; i < data.length; i++) {
-            for (let j = 0; j < data[i]["meta"]["syns"].length; j++) {
-                //console.log(data[i]["meta"]["syns"][j]);
-                synListFirst = synListFirst.concat(data[i]["meta"]["syns"][j]);
-            }
+        for (let i = 0; i < data["synonyms"].length; i++){
+            synListFirst = synListFirst.concat(data["synonyms"][i])
         }
-        //console.log(synListFirst);
+        console.log(synListFirst)
+        
     })
     .catch();
 
-    await fetch('https://dictionaryapi.com/api/v3/references/thesaurus/json/' + wordSecond + '?key=68e808fe-49bb-43fa-aa19-40a7da03ac6e')
+    await fetch('https://api.api-ninjas.com/v1/thesaurus?word=' + wordSecond, 
+    {headers: { 'X-Api-Key': 'qES39P3zb/DiJ6lltMJhfw==lkt9C2EiF2GPS7W6'}})
     .then((response) => {
+        console.log(response)
         return response.json();
     })
     .then((data) => {
         synListSecond = [];
+        console.log(data);
         //console.log(data[0]["meta"]["syns"][0]);
-        for (let i = 0; i < data.length; i++) {
-            for (let j = 0; j < data[i]["meta"]["syns"].length; j++) {
-                //console.log(data[i]["meta"]["syns"][j]);
-                synListSecond = synListSecond.concat(data[i]["meta"]["syns"][j]);
-            }
+        for (let i = 0; i < data["synonyms"].length; i++){
+            synListSecond = synListSecond.concat(data["synonyms"][i])
         }
-        //console.log(synListSecond);
-        callback();
+        console.log(synListSecond)
+        
     })
     .catch();
 }
