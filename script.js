@@ -42,6 +42,7 @@ const wordToEmojiList = [
     ['fishing pole','🐟🦯'],
     ['high tide','👋🌊'],
     ['ski lift','⛷️🏋️‍♂️'],
+    ['cart wheel','🛒🚗'],
     ['face book','😀📕'],
     ['cow boy','🐮👦'],
     ['moon walk','🌕🚶‍♂️'],
@@ -56,7 +57,6 @@ const wordToEmojiList = [
     ["rain coat", "💧🧥"],
     ["cup cake", "🧁🍰"],
     ['key board','🔑🛹'],
-    ['cart wheel','🛒🚗'],
     ['dinner time','🍲⏰'],
     ['head phones','💆‍♂️📞'],
     ['traffic light','🛣️💡'],
@@ -162,6 +162,7 @@ const getData = async (callback) => {
         for (let i = 0; i < data["synonyms"].length; i++){
             synListSecond = synListSecond.concat(data["synonyms"][i])
         }
+        callback();
         console.log(synListSecond)
         
     })
