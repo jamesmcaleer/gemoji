@@ -64,6 +64,14 @@ const wordToEmojiList = [
     ["fire fighter", "🔥🥊"],
     ["bed room", "🛏️🏠"],
     ["wheel chair", "🚗🪑"],
+    ['fight club', '🥊♣️'],
+    ['rain forest', '💧🌲'],
+    ['pool noodle', '🏊🍜'],
+    ['stair case', '👀💼'],
+    ['swim meet', '🏊🥩'],
+    ['dumb bell', '😵‍💫🔔'],
+    ['book mark', '📕❌'],
+    ['massage gun', '💆‍♂️🔫'],
     ["snow man", "🌨️👤"],
     ["fish bowl", "🐟🥣"],
     ["global warming", "🌍🔥"],
@@ -137,7 +145,7 @@ const getData = async (callback) => {
         for (let i = 0; i < data["synonyms"].length; i++){
             synListFirst = synListFirst.concat(data["synonyms"][i])
         }
-        //console.log(synListFirst)
+        console.log(synListFirst)
         
     })
     .catch();
@@ -150,13 +158,14 @@ const getData = async (callback) => {
     })
     .then((data) => {
         synListSecond = [];
-        console.log(data);
+        //console.log(data);
         //console.log(data[0]["meta"]["syns"][0]);
         for (let i = 0; i < data["synonyms"].length; i++){
             synListSecond = synListSecond.concat(data["synonyms"][i])
         }
+        console.log(synListSecond)
         callback();
-        //console.log(synListSecond)
+        
         
     })
     .catch();
