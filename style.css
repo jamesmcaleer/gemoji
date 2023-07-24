@@ -140,6 +140,18 @@ br.bigger {
     margin: 0 auto;
 }
 
+#submit{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 75%;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+}
+
 .container .box { 
     width:250px; 
     display:table;
