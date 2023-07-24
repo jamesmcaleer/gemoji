@@ -295,9 +295,7 @@ document.addEventListener("keyup", (e) => {
         return;
     }
     else if (e.code == "Enter") {
-        if (checkGuess()) {
-            submit();
-        }
+        checkGuess();
     }
 })
 
@@ -342,15 +340,13 @@ function preserveGameState () {
 }
 
 function checkGuess() {
-    guessText = guessInput.value
-    guessBreak = guessText.split(" ");
-    if (guessText.length == 0 || guessBreak.length != 2) {
-        return false;
-    }
-    else {
+    guessText = guessInput.value.trim();
+    guessBreak = guessText.split(/\s+/);
+    console.log(guessBreak);
+    if (guessBreak.length == 2) {
         guessFirst = guessBreak[0].toLowerCase();
         guessSecond = guessBreak[1].toLowerCase();
-        return true;
+        submit();
     }
 }
 
@@ -445,6 +441,7 @@ async function wait(func, seconds) {
 function endGame() {
     guessInput.remove();
     document.getElementById("answer").innerText = word;
+    document.getElementById("submit").style.display="none";
     wait(showStats, 1.5);
 }
 
