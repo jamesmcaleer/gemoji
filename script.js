@@ -48,7 +48,7 @@ const wordToEmojiList = [
     ['moon walk','🌕🚶‍♂️'],
     ['good point','👍❗'],
     ['sand castle','🏖️🏰'],
-    ['bucket list',''],
+    ['bucket list','🗑️📜'],
     ['gift card','🎁🃏'],
     ['road rage','🛣️😡'],
     ['stop sign','✋⚠️'],
@@ -63,19 +63,16 @@ const wordToEmojiList = [
     ['family tree','👪🌲'],
     ["fire fighter", "🔥🥊"],
     ["bed room", "🛏️🏠"],
-    ["moon light", "🌕🌠"],
     ["wheel chair", "🚗🪑"],
     ["snow man", "🌨️👤"],
     ["fish bowl", "🐟🥣"],
     ["global warming", "🌍🔥"],
     ["wind mill", "💨🏰"],
     ["cup board", "🥤🛹"],
-    ["thunder storm", "⛈️🌩️"],
     ["rain drop", "💧☔"],
     ["brain storm", "🧠🌩️"],
-    ["sea shell", "🐚🌊"],
-    ["high way", "🛣️🚗"],
-    ["suit case", "👝🧳"],
+    ["sea shell", "🌊🐚"],
+    ["suit case", "🕴️💼"],
     ["back pack", "🔙🧳"],
     ["rail road", "🚆🛣️"],
     ["bird house", "🐦🏠"],
@@ -84,39 +81,35 @@ const wordToEmojiList = [
     ['golf club','🏌️‍♂️♣️'],
     ["water fall", "💧🍂"],
     ["rain bow", "💧🏹"],
-    ["moon light", "🌕🌠"],
+    ["moon light", "🌕💡"],
     ["beach ball", "🏖️🏀"],
     ["milk shake", "🥛🥤"],
-    ["pan cake", "🍳🥞"],
+    ["pan cake", "🍳🎂"],
     ['fire man', '🔥👨'],
     ['water park','🌊🎢'],
-    ['red light',''],
-    ['sweat shirt',''],
-    ['play list','']
-    ['laser tag',''],
+    ['red light','🟥☀️'],
+    ['flower pot','🌻🍲'],
+    ['sweat shirt','💦👕'],
+    ['play list','🤾‍♂️📜']
     ["tea pot", "🍵🍶"],
     ['home work','🏠💼'],
-    ['wind shield',''],
-    ['corner store',''],
-    ['boot camp',''],
-    ['peanut butter',''],
-    ['pit stop',''],
-    ['photo graph',''],
-    ['new jersey',''],
-    ['jet pack',''],
-    ['web page',''],
-    ['air head',''],
-    ['boot camp',''],
-    ['toy drive',''],
-    ['drama queen',''],
-    ['time line',''],
-    ['quarter back',''],
-    ['high school',''],
-    ['food fight',''],
-    ['train wreck',''],
-    ['holly wood',''],
-    ['bikini bottom',''],
-    ['mountain side','']
+    ['wind shield','💨🛡️'],
+    ['corner store','📐🏬'],
+    ['boot camp','🥾🏕️'],
+    ['peanut butter','🥜🧈'],
+    ['pit stop','🕳️🛑'],
+    ['photo graph','📷📈'],
+    ['new jersey','🆕🎽'],
+    ['web page','🕸️📃'],
+    ['air head','💨🧑'],
+    ['toy drive','🧸🚗'],
+    ['drama queen','🎭👑'],
+    ['time line','⏱️📉'],
+    ['high school','☝️🏫'],
+    ['food fight','🍲🥊'],
+    ['train wreck','🚂💔'],
+    ['holly wood','🎅🪵'],
+    ['bikini bottom','👙🍑']
 ];
 
 const word = wordToEmojiList[diff][0];
@@ -134,17 +127,17 @@ const getData = async (callback) => {
     await fetch('https://api.api-ninjas.com/v1/thesaurus?word=' + wordFirst, 
     {headers: { 'X-Api-Key': 'qES39P3zb/DiJ6lltMJhfw==lkt9C2EiF2GPS7W6'}})
     .then((response) => {
-        console.log(response)
+        //console.log(response)
         return response.json();
     })
     .then((data) => {
         synListFirst = [];
-        console.log(data);
+        //console.log(data);
         //console.log(data[0]["meta"]["syns"][0]);
         for (let i = 0; i < data["synonyms"].length; i++){
             synListFirst = synListFirst.concat(data["synonyms"][i])
         }
-        console.log(synListFirst)
+        //console.log(synListFirst)
         
     })
     .catch();
@@ -152,7 +145,7 @@ const getData = async (callback) => {
     await fetch('https://api.api-ninjas.com/v1/thesaurus?word=' + wordSecond, 
     {headers: { 'X-Api-Key': 'qES39P3zb/DiJ6lltMJhfw==lkt9C2EiF2GPS7W6'}})
     .then((response) => {
-        console.log(response)
+        //console.log(response)
         return response.json();
     })
     .then((data) => {
@@ -163,7 +156,7 @@ const getData = async (callback) => {
             synListSecond = synListSecond.concat(data["synonyms"][i])
         }
         callback();
-        console.log(synListSecond)
+        //console.log(synListSecond)
         
     })
     .catch();
