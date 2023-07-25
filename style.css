@@ -148,8 +148,8 @@ br.bigger {
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 25px;
+    float: right;
 }
 
 .container .box { 
@@ -177,6 +177,10 @@ br.bigger {
     color: white;
     width: 60px;
     padding: 5px;
+}
+
+.guess-input{
+    float: left;
 }
 
 .num-guess{
