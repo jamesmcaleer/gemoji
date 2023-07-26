@@ -201,7 +201,7 @@ function loadLocalStorage() {
 
     console.log(gamesPlayed);
     console.log(gamesWonOne);
-    console.log(gamesWonTwo );
+    console.log(gamesWonTwo);
     console.log(gamesWonThree);
     console.log(gamesWonFour);
 
@@ -306,7 +306,8 @@ function copyText()
     shareText.select();
     document.execCommand('copy');
     shareText.style.display='none';
-
+    document.getElementById("copied").style.display="block";
+    wait(hideCopied, 3);
 }
 
 function checkForReset(){
@@ -347,6 +348,10 @@ function checkGuess() {
         guessFirst = guessBreak[0].toLowerCase();
         guessSecond = guessBreak[1].toLowerCase();
         submit();
+    }
+    else {
+        document.getElementById("wrong").style.display="block";
+        wait(hideWrong, 3);
     }
 }
 
@@ -559,4 +564,12 @@ function hideStats(){
 function hideInfo(){
     document.getElementById("info-container").style.display="none"
     document.getElementById("overlay").style.display="none"
+}
+
+function hideCopied(){
+    document.getElementById("copied").style.display="none";
+}
+
+function hideWrong(){
+    document.getElementById("wrong").style.display="none";
 }
