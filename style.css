@@ -26,6 +26,10 @@ br.bigger {
     line-height: 300%;
 }
 
+button:active{
+    transform: scale(.9);
+}
+
 #icon-left {
     display: block;
     float: left;
