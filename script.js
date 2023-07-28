@@ -241,7 +241,7 @@ function loadLocalStorage() {
                 firstCorr = true;
                 // make word green
             }
-            else if (synListFirst.includes(guessFirstLoc)) {
+            else if (synListFirst.includes(guessFirstLoc) || guessFirstLoc.includes(wordFirst) || wordFirst.includes(guessFirstLoc)) {
                 newGuessLeft.setAttribute('id','yellow');
                 // make word yellow
             }
@@ -257,7 +257,7 @@ function loadLocalStorage() {
                 secondCorr = true;
                 // make word green
             }
-            else if (synListSecond.includes(guessSecondLoc)) {
+            else if (synListSecond.includes(guessSecondLoc) || guessSecondLoc.includes(wordSecond) || wordSecond.includes(guessSecondLoc)) {
                 newGuessRight.setAttribute('id','yellow');
                 // make word yellow
             }
@@ -459,7 +459,7 @@ function processGuess() {
         firstCorr = true;
         // make word green
     }
-    else if (synListFirst.includes(guessFirst)) {
+    else if (synListFirst.includes(guessFirst) || guessFirst.includes(wordFirst) || wordFirst.includes(guessFirst)) {
         newGuessLeft.setAttribute('id','yellow');
         // make word yellow
     }
@@ -473,7 +473,7 @@ function processGuess() {
         secondCorr = true;
         // make word green
     }
-    else if (synListSecond.includes(guessSecond)) {
+    else if (synListSecond.includes(guessSecond) || guessSecond.includes(wordSecond) || wordSecond.includes(guessSecond)) {
         newGuessRight.setAttribute('id','yellow');
         // make word yellow
     }
