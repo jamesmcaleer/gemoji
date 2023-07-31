@@ -130,21 +130,21 @@ var wordBreak = word.split(" ");
 var wordFirst = wordBreak[0];
 var wordSecond = wordBreak[1];
 
+let apiKey;
 //resetGameState();
 
-fetch('/.netlify/functions/getEnvVars')
-  .then(response => response.json())
-  .then(data => {
-    // Use the received environment variables in your client-side code
-    const apiKey = data.apiKey;
-    console.log('API Key:', apiKey);
-    // Use the environment variables for your intended purposes securely.
-  })
-  .catch(error => {
-    console.error('Error fetching environment variables:', error);
-  });
-
-const getData = async (callback) => {
+function fetchEnvVars(callback) {
+  fetch('/.netlify/functions/getEnvVars')
+    .then(response => response.json())
+    .then(data => {
+      apiKey = data.apiKey;
+      callback();
+    })
+    .catch(error => {
+      console.error('Error fetching environment variables:', error);
+    });
+}
+const getData = async (apiKey, callback) => {
     await fetch('https://api.api-ninjas.com/v1/thesaurus?word=' + wordFirst, 
     {headers: { 'X-Api-Key': apiKey}}) // 'qES39P3zb/DiJ6lltMJhfw==lkt9C2EiF2GPS7W6'
     .then((response) => {
@@ -184,7 +184,7 @@ const getData = async (callback) => {
     .catch();
 }
 
-getData(loadLocalStorage);
+fetchEnvVars(getData(loadLocalStorage));
 
 function loadLocalStorage() {
     try {
