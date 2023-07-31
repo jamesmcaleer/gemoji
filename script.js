@@ -130,12 +130,12 @@ var wordBreak = word.split(" ");
 var wordFirst = wordBreak[0];
 var wordSecond = wordBreak[1];
 
-let apiKey;
+
 //resetGameState();
 
 async function fetchEnvVars() {
   try {
-    const response = await fetch('/.netlify/functions/getEnvVars');
+    const response = await fetch('/.netlify/functions/getApiKey');
     const data = await response.json();
     return data;
   } catch (error) {
