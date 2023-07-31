@@ -1,5 +1,6 @@
 const guessInput = document.querySelector(".guess-input");
 const guessList = document.querySelector(".guesses");
+const apiKey = process.env.API_KEY;
 
 var synListFirst;
 var synListSecond;
@@ -133,7 +134,7 @@ var wordSecond = wordBreak[1];
 
 const getData = async (callback) => {
     await fetch('https://api.api-ninjas.com/v1/thesaurus?word=' + wordFirst, 
-    {headers: { 'X-Api-Key': 'qES39P3zb/DiJ6lltMJhfw==lkt9C2EiF2GPS7W6'}})
+    {headers: { 'X-Api-Key': apiKey}})
     .then((response) => {
         //console.log(response)
         return response.json();
@@ -151,7 +152,7 @@ const getData = async (callback) => {
     .catch();
 
     await fetch('https://api.api-ninjas.com/v1/thesaurus?word=' + wordSecond, 
-    {headers: { 'X-Api-Key': 'qES39P3zb/DiJ6lltMJhfw==lkt9C2EiF2GPS7W6'}})
+    {headers: { 'X-Api-Key': apiKey}})
     .then((response) => {
         //console.log(response)
         return response.json();
