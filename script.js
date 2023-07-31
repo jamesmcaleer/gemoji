@@ -132,9 +132,21 @@ var wordSecond = wordBreak[1];
 
 //resetGameState();
 
+fetch('/.netlify/functions/getEnvVars')
+  .then(response => response.json())
+  .then(data => {
+    // Use the received environment variables in your client-side code
+    const apiKey = data.apiKey;
+    console.log('API Key:', apiKey);
+    // Use the environment variables for your intended purposes securely.
+  })
+  .catch(error => {
+    console.error('Error fetching environment variables:', error);
+  });
+
 const getData = async (callback) => {
     await fetch('https://api.api-ninjas.com/v1/thesaurus?word=' + wordFirst, 
-    {headers: { 'X-Api-Key': 'qES39P3zb/DiJ6lltMJhfw==lkt9C2EiF2GPS7W6'}})
+    {headers: { 'X-Api-Key': apiKey}}) // 'qES39P3zb/DiJ6lltMJhfw==lkt9C2EiF2GPS7W6'
     .then((response) => {
         //console.log(response)
         return response.json();
@@ -152,7 +164,7 @@ const getData = async (callback) => {
     .catch();
 
     await fetch('https://api.api-ninjas.com/v1/thesaurus?word=' + wordSecond, 
-    {headers: { 'X-Api-Key': 'qES39P3zb/DiJ6lltMJhfw==lkt9C2EiF2GPS7W6'}})
+    {headers: { 'X-Api-Key': apiKey}})
     .then((response) => {
         //console.log(response)
         return response.json();
