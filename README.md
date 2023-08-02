@@ -13,10 +13,10 @@ The answer is home work because the house emoji represents a **home** and the br
 If the player guesses a synonym to one of these words, it will show up yellow hinting to the player that they are on the right track
 
 ## Play Gemoji
-To play **Gemoji**, click [here](https://jamesmcaleer.github.io/gemoji/)
+To play **Gemoji**, click [here](https://gemoji.netlify.app)
 
 ## How it works
-Upon starting the game, the [Dictionary API](https://dictionaryapi.com) is used to find all synonyms of both target words
+Upon starting the game, the [Thesaurus API](https://api-ninjas.com/api/thesaurus) is used to find all synonyms of both target words
 
 For example, **home** would have synonyms such as house and place
 
