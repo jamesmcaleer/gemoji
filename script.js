@@ -294,6 +294,7 @@ function loadLocalStorage() {
             
             // reset input box
             guessInput.value = '';
+            document.getElementById('attempt').innerText = "Attempt: " + (row + 1) + "/4";
             if (row > 3) {
                 gameOver = true;
                 endGame();
@@ -411,6 +412,7 @@ function submit() {
 
     // reset input box
     guessInput.value = '';
+    document.getElementById('attempt').innerText = "Attempt: " + (row + 1) + "/4";
     window.localStorage.setItem('row', row);
     
     
@@ -461,6 +463,7 @@ function endGame() {
     guessInput.remove();
     document.getElementById("answer").innerText = word;
     document.getElementById("submit").style.display="none";
+    document.getElementById("attempt").style.display="none";
     wait(showStats, 1.5);
 }
 
@@ -561,7 +564,7 @@ function showStats(){
             }
         }
     }
-
+    shareMessage += "https://gemoji.netlify.app/";
     document.getElementById("share-text").value = shareMessage
 }
 
