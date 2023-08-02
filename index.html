@@ -34,7 +34,7 @@
         
         <br>
         <hr>
-        <br class="bigger">
+        <br>
 
         <div class="notification" id="copied">Copied Results to Clipboard</div>
         <div class="notification" id="wrong">Guess must be two words</div>
@@ -182,12 +182,14 @@
         </div>
         
         <div class="guess-container">
-            <input type="text" class="guess-input" id="test">
+            <input type="text" class="guess-input">
             <button id="submit" onclick="checkGuess()">➤</button>
         </div>
 
+        <div id="attempt">
+            Attempt: 1/4
+        </div>
 
-        <br>
         <h1 id="answer"></h1>
     </body>
 </html>
