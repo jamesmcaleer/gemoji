@@ -104,7 +104,7 @@ const wordToEmojiList = [
     ['red light','🟥☀️'],
     ['flower pot','🌻🍲'],
     ['sweat shirt','💦👕'],
-    ['play list','🤾‍♂️📜']
+    ['play list','🤾‍♂️📜'],
     ["tea pot", "🍵🍶"],
     ['home work','🏠💼'],
     ['wind shield','💨🛡️'],
