@@ -62,7 +62,7 @@ const wordToEmojiList = [
     ['head phones','💆‍♂️📞'],
     ['traffic light','🛣️💡'],
     ['easter island', '🐰🏝️'],
-    ['bank roll', '🏦🧻'].
+    ['bank roll', '🏦🧻'],
     ['family tree','👪🌲'],
     ["fire fighter", "🔥🥊"],
     ["bed room", "🛏️🏠"],
