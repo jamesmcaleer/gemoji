@@ -72,7 +72,7 @@ const wordToEmojiList = [
     ['pool noodle', '🏊🍜'],
     ['stair case', '👀💼'],
     ['swim meet', '🏊🥩'],
-    ['dumb bell', '😵‍💫🔔'],
+    ['dumb bell', '🥴🔔'],
     ['book mark', '📕❌'],
     ['massage gun', '💆‍♂️🔫'],
     ["snow man", "🌨️👤"],
