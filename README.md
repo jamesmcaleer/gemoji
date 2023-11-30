@@ -1,5 +1,9 @@
 # Gemoji
 Guess the **compound** word given two emojis
+
+## Play Gemoji
+To play **Gemoji**, click [here](https://gemoji.netlify.app)
+
 ## What is Gemoji?
 **Gemoji** is a daily refreshing web game similar to Wordle
 
@@ -11,9 +15,6 @@ The emojis given are 🏠💼
 The answer is home work because the house emoji represents a **home** and the briefcase emoji in this given context represents **work**
 
 If the player guesses a synonym to one of these words, it will show up yellow hinting to the player that they are on the right track
-
-## Play Gemoji
-To play **Gemoji**, click [here](https://gemoji.netlify.app)
 
 ## How it works
 Upon starting the game, the [Thesaurus API](https://api-ninjas.com/api/thesaurus) is used to find all synonyms of both target words
